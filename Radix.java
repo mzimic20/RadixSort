@@ -6,7 +6,12 @@ public class Radix {
   }
 
   public static int length(int n) {
-    return 0;
+    int counter = 1;
+    while(n > 10) {
+      n = (int)(n / 10);
+      counter++;
+    }
+    return counter;
   }
 
   public static void merge(MyLinkedList original, MyLinkedList[] buckets) {
