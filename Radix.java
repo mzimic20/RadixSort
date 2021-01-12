@@ -36,8 +36,8 @@ public class Radix {
         (buckets[ nth( data.get(n), i) ]).add( data.get(n) );
       }
       clean.extend(data);
+      merge(data, buckets);
     }
-    merge(data, buckets);
   }
 
   public static void radixSort(SortableLinkedList data) {
