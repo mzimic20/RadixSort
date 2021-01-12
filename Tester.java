@@ -33,6 +33,16 @@ public class Tester {
     System.out.println( Arrays.toString(test) );
     Radix.merge(a, test);
     System.out.println(a);
+
+    SortableLinkedList sort = new SortableLinkedList();
+    sort.add(5);
+    sort.add(2);
+    sort.add(7);
+    sort.add(4);
+    sort.add(3);
+    System.out.println(sort);
+    Radix.radixSortSimple(sort);
+    System.out.println(sort);
   }
 
 }
