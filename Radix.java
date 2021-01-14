@@ -6,12 +6,8 @@ public class Radix {
   }
 
   public static int length(int n) {
-    int counter = 1;
-    while(n > 10) {
-      n = (int)(n / 10);
-      counter++;
-    }
-    return counter;
+    String s = "" + n;
+    return s.length();
   }
 
   public static void merge(SortableLinkedList original, SortableLinkedList[] buckets) {
@@ -26,16 +22,15 @@ public class Radix {
       SortableLinkedList b = new SortableLinkedList();
       buckets[i] = b;
     }
-    int k = 0;
-    for(int i = 0; i < data.size(); i++) {
-      if ( length( data.get(i) ) > k) k = length( data.get(i) );
-    }
-    SortableLinkedList clean = new SortableLinkedList();
+    int k = 1;
+    int n = 0;
     for(int i = 0; i < k; i++) {
-      for(int n = 0; n < data.size(); n++) {
-        (buckets[ nth( data.get(n), i) ]).add( data.get(n) );
+      while( data.size() > 0) {
+        n = data.remove(0);
+        if (length(n) > k) k = length(n);
+        (buckets[ nth(n, i) ]).add(n);
+
       }
-      clean.extend(data);
       merge(data, buckets);
     }
   }

@@ -41,7 +41,9 @@ public class Tester {
     sort.add(999);
     sort.add(3);
     System.out.println(sort);
+    System.out.println("-------");
     Radix.radixSortSimple(sort);
+    System.out.println("-------");
     System.out.println(sort);
   }
 
